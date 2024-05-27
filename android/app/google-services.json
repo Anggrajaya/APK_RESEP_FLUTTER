@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "728251412222",
+    "firebase_url": "https://resep-30bc0-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "resep-30bc0",
+    "storage_bucket": "resep-30bc0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:728251412222:android:27a5757a1fefc4a8937faf",
+        "android_client_info": {
+          "package_name": "com.example.resep"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCyPfmHC48VoTsOrRrBt29d6ZaRWM8fBpE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
