@@ -92,12 +92,10 @@ class AyamGeprekPage extends StatelessWidget {
                   ),
                   SizedBox(height: 8),
                   Text('1. Lumuri daging ayam dengan garam dan merica.'),
-                  Text(
-                      '2. Celupkan daging ayam ke dalam campuran tepung terigu dan tepung maizena.'),
+                  Text('2. Celupkan daging ayam ke dalam campuran tepung terigu dan tepung maizena.'),
                   Text('3. Celupkan ke dalam telur kocok.'),
                   Text('4. Goreng ayam hingga kecokelatan dan matang.'),
-                  Text(
-                      '5. Tiriskan ayam dan letakkan di atas sisi ayam menggunakan ulekan.'),
+                  Text('5. Tiriskan ayam dan letakkan di atas sisi ayam menggunakan ulekan.'),
                   Text('6. Beri sambal dan tambahkan daun kemangi jika suka.'),
                 ],
               ),

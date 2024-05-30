@@ -1,5 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:resep/detail_resep/ayam_geprek.dart';
+import 'package:resep/detail_resep/bubur_ayam.dart';
+import 'package:resep/detail_resep/chicken_katsu.dart';
+import 'package:resep/detail_resep/choco_lava.dart';
+import 'package:resep/detail_resep/cilok.dart';
+import 'package:resep/detail_resep/daifuku_mochi.dart';
+import 'package:resep/detail_resep/donat_kentang.dart';
+import 'package:resep/detail_resep/es_buah.dart';
+import 'package:resep/detail_resep/gyoza.dart';
+import 'package:resep/detail_resep/nasi_goreng.dart';
+import 'package:resep/detail_resep/nasi_pecel.dart';
+import 'package:resep/detail_resep/pisang_nugget.dart';
+import 'package:resep/detail_resep/puding_caramel.dart';
+import 'package:resep/detail_resep/rawon.dart';
+import 'package:resep/detail_resep/sayur_asem.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../category/sarapan.dart';
 import '../category/utama.dart';
@@ -21,7 +36,7 @@ class _DashboardPageState extends State<DashboardPage> {
   int activeIndex = 0;
 
   final List<String> foodImages = [
-    'images/makanan_slide1.jpg',
+    'images/resep_nasi_goreng.png',
     'images/makanan_slide2.jpg',
     'images/makanan_slide3.jpg'
   ];
@@ -47,6 +62,142 @@ class _DashboardPageState extends State<DashboardPage> {
       'title': 'Nasi Kuning',
     },
   ];
+
+  final TextEditingController searchController = TextEditingController();
+  List<String> suggestions = [];
+
+  void updateSuggestions(String input) {
+    final allCategories = ['Ayam Geprek', 'Ayam Goreng', 'Bubur Ayam', 'Chicken Katsu', 'Choco Lava', 'Cilok', 'Daifuku Mochi', 'Dimsum', 'Donat Kentang', 'Es Buah', 'Gyoza', 'Nasi Goreng', 'Nasi Kuning', 'Nasi Pecel', 'Pisang Nugget', 'Puding Caramel', 'Rawon', 'Sayur Asem', 'Sup Ikan'];
+    setState(() {
+      suggestions = allCategories
+          .where((category) =>
+              category.toLowerCase().contains(input.toLowerCase()))
+          .toList();
+    });
+  }
+
+  void navigateToCategory(String category) {
+    if (category == 'Ayam Geprek') {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const AyamGeprekPage()),
+      );
+    }
+    if (category == 'Ayam Goreng') {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const AyamGorengPage()),
+      );
+    }
+    if (category == 'Bubur Ayam') {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const BuburAyamPage()),
+      );
+    }
+    if (category == 'Chicken Katsu') {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const ChickenKatsuPage()),
+      );
+    }
+    if (category == 'Choco Lava') {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const ChocoLavaCakePage()),
+      );
+    }
+    if (category == 'Cilok') {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => CilokPage()),
+      );
+    }
+    if (category == 'Daifuku Mochi') {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const DaifukuMochiPage()),
+      );
+    }
+    if (category == 'Dimsum') {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const DimsumPage()),
+      );
+    }
+    if (category == 'Donat Kentang') {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => DonatKentangPage()),
+      );
+    }
+    if (category == 'Es Buah') {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const EsBuahPage()),
+      );
+    }
+    if (category == 'Gyoza') {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => GyozaPage()),
+      );
+    }
+    if (category == 'Nasi Goreng') {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const NasiGorengPage()),
+      );
+    }
+    if (category == 'Nasi Kuning') {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const NasiKuningPage()),
+      );
+    }
+    if (category == 'Nasi Pecel') {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const NasiPecelPage()),
+      );
+    }
+    if (category == 'Pisang Nugget') {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => PisangNuggetPage()),
+      );
+    }
+    if (category == 'Puding Caramel') {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const PudingCaramelPage()),
+      );
+    }
+    if (category == 'Rawon') {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const RawonPage()),
+      );
+    }
+    if (category == 'Sayur Asem') {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const SayurAsemPage()),
+      );
+    }
+    if (category == 'Sup Ikan') {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const SupIkanPage()),
+      );
+    }
+  }
+
+  void clearSuggestions() {
+    setState(() {
+      suggestions.clear();
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -130,16 +281,54 @@ class _DashboardPageState extends State<DashboardPage> {
             SizedBox(height: 20),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
-              child: TextField(
-                decoration: InputDecoration(
-                  hintText: 'Mau masak apa hari ini?',
-                  prefixIcon: Icon(Icons.search, color: Colors.grey),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10.0),
+              child: Column(
+                children: [
+                  Stack(
+                    children: [
+                      TextField(
+                        controller: searchController,
+                        onChanged: (value) {
+                          if (value.isNotEmpty) {
+                            updateSuggestions(value);
+                          } else {
+                            clearSuggestions();
+                          }
+                        },
+                        decoration: InputDecoration(
+                          hintText: 'Mau masak apa hari ini?',
+                          prefixIcon: Icon(Icons.search, color: Colors.grey),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                          filled: true,
+                          fillColor: Colors.grey[200],
+                        ),
+                      ),
+                      if (suggestions.isNotEmpty)
+                        Positioned(
+                          right: 0,
+                          child: IconButton(
+                            icon: Icon(Icons.close),
+                            onPressed: clearSuggestions,
+                          ),
+                        ),
+                    ],
                   ),
-                  filled: true,
-                  fillColor: Colors.grey[200],
-                ),
+                  if (suggestions.isNotEmpty)
+                    ListView.builder(
+                      shrinkWrap: true,
+                      itemCount: suggestions.length,
+                      itemBuilder: (context, index) {
+                        return ListTile(
+                          title: Text(suggestions[index]),
+                          onTap: () {
+                            navigateToCategory(suggestions[index]);
+                            clearSuggestions();
+                          },
+                        );
+                      },
+                    ),
+                ],
               ),
             ),
             SizedBox(height: 20),
@@ -325,3 +514,4 @@ class RecommendedFoodCard extends StatelessWidget {
     );
   }
 }
+
